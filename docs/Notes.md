@@ -36,6 +36,7 @@ See documentation at http://pipenv.readthedocs.io/en/latest/basics/
 * Exit pipenv shell from command prompt: `exit`
 * Show where virtual environment for project was created: `pipenv --venv`
 * Run command from virtual environment: `pipenv run <command>`
+* After sourcing DEV_VARS for PIPENV_VENV_IN_PROJECT after fresh clone from git use `pipenv install --three` to create new virtualenv and install dependencies.
 
 # IntelliJ Idea with Python plugin
 * Settings - Plugins - make sure Python plugin is installed
