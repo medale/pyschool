@@ -61,12 +61,17 @@ https://pypi.python.org
 
 Specify private repo: https://docs.pipenv.org/advanced/#specifying-package-indexes
 
+import importlib as il
+il.reload(bt)
+
 # Modules to cover
+* re
 * datetime
 * beautifulsoup4
 * xml?
 * json?
 * http? requester?
+
 ```
 # http://python-docs.readthedocs.io/en/latest/dev/virtualenvs.html
 import requests
@@ -76,6 +81,8 @@ response = requests.get('https://httpbin.org/ip')
 print('Your IP is {0}'.format(response.json()['origin']))
 ```
 * numpy
+* https://docs.python.org/3/index.html
+* Library Reference: https://docs.python.org/3/library/index.html
 
 ## IPython tips and tricks
 * %quickref
