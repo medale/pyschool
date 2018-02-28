@@ -9,6 +9,8 @@ def main(*args):
     strings()
     lists()
     dicts()
+    tuples()
+    files()
 
 
 def strings():
@@ -68,7 +70,8 @@ def lists():
 
 def dicts():
 
-    # No order!
+    # No order! Mutable! Can have keys, values of different types.
+    # keys must be hashable (__hash__(self))
     ping_pong_scores = {'Chang': 98, 'Steve': 82, 'Amit': 1}
     ping_pong_scores['Chang']
     ping_pong_scores['Chang'] += 1
@@ -83,18 +86,54 @@ def dicts():
     record_1 = {'first': 'Foo', 'last': 'Bar', 'age': 42}
     record_1['age']
 
-    # list - otherwise dict_keys, dict_values
+    # list - otherwise dict_keys, dict_values, dict_items
     names = list(ping_pong_scores.keys())
     scores = list(ping_pong_scores.values())
+    entries_as_tuples = list(ping_pong_scores.items())
 
     # sort by key
-    sorted(ping_pong_scores)
+    sorted(ping_pong_scores.items())
 
     # sorts values - lowest to highest
     sorted(ping_pong_scores.items(), key=lambda kv: kv[1])
 
     # sorts values - highest to lowest
     sorted(ping_pong_scores.items(), key=lambda kv: kv[1], reverse=True)
+
+
+def tuples():
+    # Immutable
+    tup = ('foo', 100, 42)
+
+    word = tup[0]
+    word_count = tup[1]
+    doc_count = tup[2]
+
+
+def files():
+    import requests
+    yawl_response = requests.get('https://raw.githubusercontent.com/elasticdog/yawl/master/yawl-0.3.2.03/word.list')
+
+    if yawl_response.status_code == requests.codes.ok:
+        yet_another_word_list = yawl_response.text
+
+        # Write a file (default mode is r for read, a - appending write)
+        # Specify encoding if chance that file will be read on different machine
+        fout = open('io/yawl.txt', mode='w', encoding='utf-8')
+        fout.write(yet_another_word_list)
+        fout.close()
+    else:
+        print('Got response code {} when trying to retrieve yawl'.format(yawl_response.status_code))
+
+    # still in scope even though it was in body of if statement
+    yet_another_word_list[:2]
+
+    fin = open('io/yawl.txt', encoding='utf-8')
+    # takes number of chars to read arg
+    wordsStr = fin.read()
+    fin.close()
+
+    words = wordsStr.split('\n')
 
 
 def strings_as_sequences(s1):

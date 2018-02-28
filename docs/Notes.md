@@ -57,12 +57,15 @@ nltk==3.2.4
 numpy==1.13.1
 six==1.10.0
 
+# Miscellaneous Python material
 https://pypi.python.org
 
 Specify private repo: https://docs.pipenv.org/advanced/#specifying-package-indexes
 
 import importlib as il
 il.reload(bt)
+
+None (obj is None)
 
 # Modules to cover
 * re
