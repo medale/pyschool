@@ -1,4 +1,8 @@
-def strings():
+# Built-in type str - not 'string' class
+# https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+
+
+def strs():
     # usually use single quotes but can use double quotes
     # assign our first variable - s1
     s1 = 'hello, I am a String and a sequence'
@@ -17,12 +21,14 @@ def strings():
     # Immutability - 'str' object does not support item assignment
     # foo[0] = 'b'   # throws TypeError
 
-    strings_as_sequences()
+    strs_as_sequences()
 
-    more_methods_on_strings()
+    more_methods_on_strs()
+
+    checking_str_values()
 
 
-def strings_as_sequences():
+def strs_as_sequences():
     s1 = 'hello, I am a String and a sequence'
     # Things to do to sequences
     s1_len = len(s1)
@@ -45,7 +51,7 @@ def strings_as_sequences():
     # s1[-100]
 
 
-def more_methods_on_strings():
+def more_methods_on_strs():
     s2 = "Now,IS,the,Time,The,TIME,is,now,OR,NeVer"
     first_comma_index = s2.index(",")
     last_comma_index = s2.rindex(",")
@@ -70,3 +76,15 @@ def more_methods_on_strings():
 
     # show docs for a specific method
     help(s3.center)
+
+
+def checking_str_values():
+
+    # True
+    is_alpha = 'abcDEF'.isalpha()
+
+    # True
+    is_alpha_numeric = 'aZ12'.isalnum()
+
+    # False
+    is_all_digits = 'Working 9 to 5'.isdigit()

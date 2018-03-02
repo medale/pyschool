@@ -1,3 +1,4 @@
+# https://docs.python.org/3/library/functions.html#open
 def files():
     import requests
     yawl_response = requests.get('https://raw.githubusercontent.com/elasticdog/yawl/master/yawl-0.3.2.03/word.list')
