@@ -2,6 +2,9 @@
 def no_return_none():
     a = 100
 
+def explicit_none_return():
+    return None
+
 # None's like Python's null value
 none_means_no_return = no_return_none()
-none_means_none = None
+explicit_none = explicit_none_return()

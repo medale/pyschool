@@ -36,6 +36,9 @@ def lists():
     # count occurrences of objects in list
     letters.count('c')
 
+    # create a list with 10 zeros
+    ten_zeros = [0] * 10
+
     # List for comprehension
     cap_letters = [l.capitalize() for l in letters]
 

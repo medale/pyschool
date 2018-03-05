@@ -85,6 +85,9 @@ def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
     pass
 ```
 
+# Unit Testing - PyUnit
+* ` python -m unittest discover`
+* Run configuration: 
 # Miscellaneous (to be distributed)
 pip install -r requirements.txt
 

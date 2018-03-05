@@ -1,6 +1,6 @@
 # Built-in type str - not 'string' class
 # https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
-
+import string
 
 def strs():
     # usually use single quotes but can use double quotes
@@ -88,3 +88,12 @@ def checking_str_values():
 
     # False
     is_all_digits = 'Working 9 to 5'.isdigit()
+
+    # all lower case ascii
+    lowers = string.ascii_lowercase
+
+    # all upper case ascii
+    uppers = string.ascii_uppercase
+
+    # all lower and upper case ascii
+    letters = string.ascii_letters
