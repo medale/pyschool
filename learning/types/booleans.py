@@ -12,7 +12,7 @@ def booleans():
     # short circuit eval or - first part is true, don't need to eval second for or
     # short circuit eval and - first part is false, don't need to eval second half
 
-    # No IndexError
+    # No IndexError thanks to short-circuit evaluation
     short_list = [1,2]
     short_circuit_eval_or = (10 != 1) or short_list[99]
 

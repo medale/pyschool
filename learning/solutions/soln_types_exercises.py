@@ -1,5 +1,76 @@
 import string
 
+def three_list_to_record(three_list):
+    """Helper function for csv_to_records to convert list with three
+    entries [lname,fname,age] to {'last_name': lname, 'first_name': fname, 'age': age}
+
+    Args:
+        three_list(list(str,str,int)): [lname,fname,age]
+
+    Returns:
+        {'last_name': lname, 'first_name': fname, 'age': age}
+
+    Raises:
+        ValueError: three_list has not three entries or entry 3 is not int.
+    """
+    if len(three_list) != 3:
+        raise ValueError('three_list argument did not have three entries')
+
+    if not isinstance(three_list[2], int):
+        raise ValueError('three_list[2] (age) should be an int')
+
+    lname, fname, age = three_list
+    return {'last_name': lname, 'first_name': fname, 'age': age}
+
+
+def csv_to_records(csv_lines):
+    """Convert lines with comma-separated values into a list of
+    dict objects.
+
+    Each line has three fields:
+    last_name, first_name, age
+
+    So the csv_lines:
+    doe,john,42
+    smith,jane,34
+
+    should create: [{'last_name': 'doe', 'first_name': 'john', 'age': 42},
+    {'last_name': 'smith', 'first_name': 'jane', 'age': 34}]
+
+    Note: a valid age should be an int value (don't worry about range).
+
+    Save lines that have too few, too many or improper fields in a
+    bad_lines list and return as second entry of two tuple.
+
+    Args:
+        csv_lines (str): The csv lines to convert to dicts. Could be
+        an empty string (return empty list). Lines are separated by newline
+        character (\n).
+
+    Returns:
+        A two-tuple with a (list of dicts of good lines, list of bad lines)
+    """
+    bad_lines = []
+    records = []
+
+    lines = csv_lines.split('\n')
+
+    for line in lines:
+        fields = line.split(',')
+        if len(fields) == 3:
+            lname, fname, age_str = fields
+            if age_str.isdigit():
+                age = int(age_str)
+                record = three_list_to_record([lname,fname,age])
+                records.append(record)
+            else:
+                bad_lines.append(line)
+        else:
+            bad_lines.append(line)
+
+    return (records, bad_lines)
+
+
 def letter_frequency(paragraph):
     """Count frequency of letters in argument string.
 

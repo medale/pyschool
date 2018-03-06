@@ -5,6 +5,28 @@ import learning.solutions.soln_types_exercises as tex
 class TestTypes(unittest.TestCase):
     """ run via python -m unittest discover
     """
+    def test_three_list_to_record(self):
+        inputs = [['miller' ,'glenn' ,36],
+                  ['short','entry'],
+                  ['long', 'entry', 45, 'extra']]
+
+
+
+    def test_csv_to_records_mixed(self):
+        csv_lines = """miller,glenn,36
+        bad,age,fifteen
+        fitzgerald,ella,28
+        short,entry
+        armstrong,louis,45
+        long,entry,45,extra
+        """
+
+        expected = {}
+
+
+    def test_csv_to_records_empty(self):
+        pass
+
     def test_letter_frequency_simple(self):
         simple = '$abc_ ABC!'
 
