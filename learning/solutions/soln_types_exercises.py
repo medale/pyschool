@@ -2,13 +2,14 @@ import string
 
 def three_list_to_record(three_list):
     """Helper function for csv_to_records to convert list with three
-    entries [lname,fname,age] to {'last_name': lname, 'first_name': fname, 'age': age}
+    [lname,fname,age_str] to {'last_name': lname, 'first_name': fname, 'age': age_int}
+    Code checks argument for three entries and third entry being convertible to int.
 
     Args:
         three_list(list(str,str,int)): [lname,fname,age]
 
     Returns:
-        {'last_name': lname, 'first_name': fname, 'age': age}
+        {'last_name': lname, 'first_name': fname, 'age': age_int}
 
     Raises:
         ValueError: three_list has not three entries or entry 3 is not int.
@@ -16,11 +17,14 @@ def three_list_to_record(three_list):
     if len(three_list) != 3:
         raise ValueError('three_list argument did not have three entries')
 
-    if not isinstance(three_list[2], int):
-        raise ValueError('three_list[2] (age) should be an int')
+    lname, fname, age_str = three_list
 
-    lname, fname, age = three_list
-    return {'last_name': lname, 'first_name': fname, 'age': age}
+    if age_str.isdigit():
+        age_int = int(age_str)
+    else:
+        raise ValueError('three_list[2] (age_str) should convertible to int')
+
+    return {'last_name': lname, 'first_name': fname, 'age': age_int}
 
 
 def csv_to_records(csv_lines):
@@ -59,10 +63,11 @@ def csv_to_records(csv_lines):
         fields = line.split(',')
         if len(fields) == 3:
             lname, fname, age_str = fields
-            if age_str.isdigit():
-                age = int(age_str)
-                record = three_list_to_record([lname,fname,age])
+            try:
+                record = three_list_to_record([lname,fname,age_str])
                 records.append(record)
+            except ValueError:
+                bad_lines.append(line)
             else:
                 bad_lines.append(line)
         else:

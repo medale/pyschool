@@ -5,11 +5,31 @@ import learning.solutions.soln_types_exercises as tex
 class TestTypes(unittest.TestCase):
     """ run via python -m unittest discover
     """
-    def test_three_list_to_record(self):
-        inputs = [['miller' ,'glenn' ,36],
-                  ['short','entry'],
-                  ['long', 'entry', 45, 'extra']]
+    def test_three_list_to_record_sunny_day(self):
+        input = ['miller' ,'glenn' ,'36']
+        result = tex.three_list_to_record(input)
 
+        self.assertEqual(result, {'last_name': 'miller',
+                                  'first_name': 'glenn',
+                                  'age': 36})
+
+
+    def test_three_list_short(self):
+        input = ['short','entry']
+        with self.assertRaises(ValueError):
+            tex.three_list_to_record(input)
+
+
+    def test_three_list_long(self):
+        input = ['long', 'entry', '45', 'extra']
+        with self.assertRaises(ValueError):
+            tex.three_list_to_record(input)
+
+
+    def test_three_list_no_int(self):
+        input = ['miller' ,'glenn' ,'XL']
+        with self.assertRaises(ValueError):
+            tex.three_list_to_record(input)
 
 
     def test_csv_to_records_mixed(self):
@@ -20,12 +40,12 @@ class TestTypes(unittest.TestCase):
         armstrong,louis,45
         long,entry,45,extra
         """
-
         expected = {}
 
 
     def test_csv_to_records_empty(self):
         pass
+
 
     def test_letter_frequency_simple(self):
         simple = '$abc_ ABC!'

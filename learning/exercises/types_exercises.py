@@ -1,13 +1,16 @@
 def three_list_to_record(three_list):
     """Helper function for csv_to_records to convert list with three
-    entries [lname,fname,age] to {'last_name': lname, 'first_name': fname, 'age': age}
-    Code checks argument for three entries and third entry being an int!
+    entries [lname,fname,age_str] to {'last_name': lname, 'first_name': fname, 'age': age_int}
+    Code checks argument for three entries and third entry being convertible to int.
 
     Args:
-        three_list(list(str,str,int)): [lname,fname,age]
+        three_list(list(str,str,str)): [lname,fname,age]
 
     Returns:
         {'last_name': lname, 'first_name': fname, 'age': age}
+
+    Raises:
+        ValueError: three_list has not three entries or entry 3 is not int.
     """
     if len(three_list) != 3:
         raise ValueError('three_list argument did not have three entries')
@@ -43,6 +46,14 @@ def csv_to_records(csv_lines):
 
     Returns:
         A two-tuple with a (list of dicts of good lines, list of bad lines)
+    """
+
+    """
+    use:    try:
+                record = three_list_to_record([lname,fname,age_str])
+                records.append(record)
+            except ValueError:
+                bad_lines.append(line)
     """
     pass
 
