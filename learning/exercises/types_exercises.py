@@ -42,7 +42,7 @@ def csv_to_records(csv_lines):
 
     Args:
         csv_lines (str): The csv lines to convert to dicts. Could be
-        an empty string (return empty list).
+        an empty string (return empty records list and bad_lines of ['']).
 
     Returns:
         A two-tuple with a (list of dicts of good lines, list of bad lines)

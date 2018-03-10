@@ -62,7 +62,7 @@ def more_methods_on_strs():
     lower_words = [w.lower() for w in words]
 
     s3 = """I can't spel.
-    They can't spel either."""
+They can't spel either."""
 
     correct_s3 = s3.replace("spel","spell")
 

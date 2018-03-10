@@ -28,6 +28,18 @@ def dicts():
     else:
         ping_pong_wins['Markus'] = 1
 
+    # Use setdefault to set a default for a key, if key exists - no change
+    players = ['Troy', 'Chang', 'Ryan', 'Amit', 'Steve', 'Markus', 'Matt']
+
+    for player in players:
+        ping_pong_wins.setdefault(player, 0)
+
+    # Value for Troy did not change - still 70
+    ping_pong_wins['Troy']
+
+    # Matt is 0 (we started while he was on vacation)
+    ping_pong_wins['Matt']
+
     # list - otherwise dict_keys, dict_values, dict_items
     names = list(ping_pong_wins.keys())
     scores = list(ping_pong_wins.values())

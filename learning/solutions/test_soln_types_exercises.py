@@ -33,18 +33,31 @@ class TestTypes(unittest.TestCase):
 
 
     def test_csv_to_records_mixed(self):
-        csv_lines = """miller,glenn,36
-        bad,age,fifteen
-        fitzgerald,ella,28
-        short,entry
-        armstrong,louis,45
-        long,entry,45,extra
-        """
-        expected = {}
+        csv_lines_str = """miller,glenn,36
+bad,age,fifteen
+fitzgerald,ella,28
+short,entry
+armstrong,louis,45
+long,entry,45,extra"""
+
+        records, bad_lines = tex.csv_to_records(csv_lines_str)
+
+        lines = ['miller,glenn,36', 'fitzgerald,ella,28', 'armstrong,louis,45']
+        expected_records = []
+        for line in lines:
+            threes = line.split(',')
+            record = tex.three_list_to_record(threes)
+            expected_records.append(record)
+
+        expected_bad_lines = ['bad,age,fifteen','short,entry','long,entry,45,extra']
+        self.assertEqual(records, expected_records)
+        self.assertEqual(bad_lines, expected_bad_lines)
 
 
     def test_csv_to_records_empty(self):
-        pass
+        records, bad_lines = tex.csv_to_records('')
+        self.assertTrue(len(records) == 0)
+        self.assertTrue(bad_lines == [''])
 
 
     def test_letter_frequency_simple(self):

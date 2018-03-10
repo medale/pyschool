@@ -27,14 +27,14 @@ def three_list_to_record(three_list):
     return {'last_name': lname, 'first_name': fname, 'age': age_int}
 
 
-def csv_to_records(csv_lines):
+def csv_to_records(csv_lines_str):
     """Convert lines with comma-separated values into a list of
     dict objects.
 
     Each line has three fields:
     last_name, first_name, age
 
-    So the csv_lines:
+    So the csv_lines_str:
     doe,john,42
     smith,jane,34
 
@@ -47,7 +47,7 @@ def csv_to_records(csv_lines):
     bad_lines list and return as second entry of two tuple.
 
     Args:
-        csv_lines (str): The csv lines to convert to dicts. Could be
+        csv_lines_str (str): The csv lines to convert to dicts. Could be
         an empty string (return empty list). Lines are separated by newline
         character (\n).
 
@@ -57,7 +57,7 @@ def csv_to_records(csv_lines):
     bad_lines = []
     records = []
 
-    lines = csv_lines.split('\n')
+    lines = csv_lines_str.split('\n')
 
     for line in lines:
         fields = line.split(',')
@@ -67,8 +67,6 @@ def csv_to_records(csv_lines):
                 record = three_list_to_record([lname,fname,age_str])
                 records.append(record)
             except ValueError:
-                bad_lines.append(line)
-            else:
                 bad_lines.append(line)
         else:
             bad_lines.append(line)
@@ -97,9 +95,9 @@ def letter_frequency(paragraph):
     all_alphas = [c for c in all_lower if c.isalpha()]
 
     # create empty alpha dict with all 26 letters of count 0
-    twenty_six_zeros = [0] * 26
-    letter_count_tuples = zip(string.ascii_lowercase, twenty_six_zeros)
-    alpha_dict = dict(letter_count_tuples)
+    alpha_dict = dict()
+    for c in string.ascii_lowercase:
+        alpha_dict.setdefault(c, 0)
 
     for c in all_alphas:
         alpha_dict[c] += 1
