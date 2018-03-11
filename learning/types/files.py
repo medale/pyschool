@@ -18,8 +18,15 @@ def files():
     yet_another_word_list[:2]
 
     fin = open('io/yawl.txt', encoding='utf-8')
-    # takes number of chars to read arg
+    # can take number of chars to read arg (default -1 read all)
     wordsStr = fin.read()
     fin.close()
 
     words = wordsStr.split('\n')
+
+    # Don't worry about closing - context manager!
+    with open('io/yawl.txt', encoding='utf-8') as fin:
+        for line in fin:
+            if line.startswith('aa'):
+                # Note: slice off newline char at the end
+                print(line[:-1])

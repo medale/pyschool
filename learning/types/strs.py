@@ -6,17 +6,21 @@ def strs():
     # usually use single quotes but can use double quotes
     # assign our first variable - s1
     s1 = 'hello, I am a String and a sequence'
-    my_type = type(s1)
 
-    # String formatting/substitution - https://pyformat.info/
-    # old style: print('s1 is of type %s' % myType)
-    # new style:
-    print('s1 is of type {}'.format(my_type))
+    # how many characters in s1?
+    len(s1)
 
     # concat and repetition
     foo = 'f' + 'oo'
     foobar = foo + 'bar'
     whole_lotta_foos = foo * 8
+
+    my_type = type(s1)
+
+    # String formatting/substitution - https://pyformat.info/
+    # old style: print('variable foo contains %s' % myType)
+    # new style:
+    print('variable foo contains {}'.format(foo))
 
     # Immutability - 'str' object does not support item assignment
     # foo[0] = 'b'   # throws TypeError

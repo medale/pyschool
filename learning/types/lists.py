@@ -11,6 +11,9 @@ def lists():
 
     numpy_invent = ['Travis', 'Oliphant']
 
+    # unpacking a list
+    fname, lname = numpy_invent
+
     # concat, multiply - new lists
     inventors = py_invent + numpy_invent
 

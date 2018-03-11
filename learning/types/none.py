@@ -8,3 +8,9 @@ def explicit_none_return():
 # None's like Python's null value
 none_means_no_return = no_return_none()
 explicit_none = explicit_none_return()
+
+# evaluates to Truth Value of false
+if explicit_none:
+    print('Test evaluated to True')
+else:
+    print('Test evaluated to False')
