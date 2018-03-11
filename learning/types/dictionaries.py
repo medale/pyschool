@@ -70,4 +70,17 @@ def dicts():
     # overwrite existing keys with new entries in last_hour_update - no update for Jane
     last_viewed.update(last_hour_update)
 
+    # dictionary for comprehension - iterate over items
+    # Instead of just movie, add (movie,count) tuple to key
+    movie_counts = { key: (value, 1) for (key,value) in last_viewed.items() }
+
+    # Using a dictionary for letter frequency counts
+    paragraph = "ask not what your country can do for you"
+    letter_freq = {}
+    for c in paragraph:
+        if c.isalpha():
+            if not c in letter_freq:
+                letter_freq[c] = 1
+            else:
+                letter_freq[c] += 1
 

@@ -40,3 +40,6 @@ def sets():
     # compare two sets: isdisjoint, issubset, issuperset also <=, <, >=, >
     # False - they have 'c' in common
     disjoint = set1.isdisjoint(set2)
+
+    # the empty set (remember {} is empty dict!)
+    empty = set()

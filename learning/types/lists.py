@@ -1,6 +1,10 @@
 # https://docs.python.org/3/library/stdtypes.html#lists
 def lists():
+    # Create new list with [] construct
     py_invent = ['Guido', 'van', 'Rossum']
+
+    # Create new list using iterator over argument
+    my_letters = list('abcd')
 
     # List as sequence/iteration, index, slices... - new list
     py_invent[0]      # 'Guido'
