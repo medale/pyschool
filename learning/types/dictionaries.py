@@ -1,6 +1,8 @@
 # https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 def dicts():
 
+    empty_dict = {}
+
     # No order! Mutable! Can have keys, values of different types.
     # keys must be hashable (__hash__(self))
     ping_pong_wins = {'Chang': 98, 'Steve': 82, 'Amit': 1, 'Alex': 10}
@@ -40,6 +42,9 @@ def dicts():
     # Matt is 0 (we started while he was on vacation)
     ping_pong_wins['Matt']
 
+    # how many entries?
+    len(ping_pong_wins)
+
     # list - otherwise dict_keys, dict_values, dict_items
     names = list(ping_pong_wins.keys())
     scores = list(ping_pong_wins.values())
@@ -53,9 +58,6 @@ def dicts():
 
     # sorts values - highest to lowest
     sorted(ping_pong_wins.items(), key=lambda kv: kv[1], reverse=True)
-
-    # how many entries?
-    len(ping_pong_wins)
 
     # start over for the next season
     ping_pong_wins.clear()
@@ -83,4 +85,14 @@ def dicts():
                 letter_freq[c] = 1
             else:
                 letter_freq[c] += 1
+
+    # Making a dict by zipping two lists and creating 2-tuples
+    keys = ['a','b','c']
+    values = [1, 2, 3]
+
+    kvs_zip = zip(keys, values)
+    kvs_list = list(kvs_zip)
+
+    kv_dict = dict(kvs_list)
+
 

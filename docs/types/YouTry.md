@@ -30,12 +30,45 @@
 * Remove all elements from `one`
 * Create a list `nums` with numbers 1 to 20
 * Create a new list of all even numbers from `nums`
+* Make a shallow copy of the even numbers list
 
 # Dictionaries
-* Create a dictionary with 'the':5 and 'foo':1
+* Create an empty dictionary
+* Create a dictionary with entries ('the':5) and ('foo':1) as `word_counts`
+* Return the value of the key 'the'
 * Update the count of 'the' to 6.
 * Remove the key 'foo'
-* Add 'bar':7
-* Return the value of 'the'
+* Add key 'bar' with value 7
+* How many keys in `word_counts`?
+* Remove all entries from `word_counts`
+* Given the following two lists, create a dictionary country:capital:
+     * `countries = ['USA','France','Germany']`
+     * `capitols = ['Washington, D.C.', 'Paris', 'Berlin']`
+* Using a dictionary for comprehension, create a new dictionary with entries:
+     * country (key): number of characters in capitol (value)
+     * Expected dict: `{'USA': 16, 'Germany': 6, 'France': 5}`
+
+# Sets
+* Create an empty set
+* Create a set with elements 1, 2, 3 as set1
+* Create another set with elements 3, 4, 5 as set2
+* What is the set that contains all elements from set1 and set2?
+* What are the elements that set1 and set2 have in common?
+* Modify set1 to contain all elements of set1 AND set2
+* Remove the number 3 from set1
+* Create a list with the unique elements in [1,2,3,3,3,4,2,1] (any order)
+
+# Tuple
+* Create a two tuple with 'Hitchhiker' and 42
+* Retrieve the first value in the tuple
+* Retrieve the second value in the tuple
+* Check if 42 is in the tuple
+* Unpack the tuple as name, age
+
+
+
+
+
+
 
 

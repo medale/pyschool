@@ -1,5 +1,13 @@
+import copy
+
 # https://docs.python.org/3/library/stdtypes.html#lists
 def lists():
+    # empty list
+    empty_list = []
+
+    # list from an iterable
+    letters = list('these are the letters')
+
     # Create new list with [] construct
     py_invent = ['Guido', 'van', 'Rossum']
 
@@ -15,8 +23,11 @@ def lists():
 
     numpy_invent = ['Travis', 'Oliphant']
 
-    # unpacking a list
+    # unpacking a list - exact match
     fname, lname = numpy_invent
+
+    # unpack a list - first element, list of remaining elements
+    head, *tail = py_invent
 
     # concat, multiply - new lists
     inventors = py_invent + numpy_invent
@@ -70,4 +81,29 @@ def lists():
         else:
             odds_bucket.append(n)
 
+    # two names pointing to same list object
+    original_list = ['a', 'b', 'c']
 
+    # make an immutable string from list - elements separated by ,
+    comma_sep_orig1 = ','.join(original_list)
+
+    additional_name = original_list
+
+    additional_name.append('d')
+
+    comma_sep_orig = ','.join(original_list)
+    comma_sep_add = ','.join(additional_name)
+
+    # make a shallow copy
+    shallow_copy = original_list[:]
+    shallow_copy2 = original_list.copy()
+
+    original_list.append('e')
+
+    # if list points to mutable objects - module copy - deep copy
+    deep_list = [['a','b'], ['c','d']]
+    shallow_deep_list = deep_list[:]
+
+    shallow_deep_list[0][0] = 'f'
+
+    deep_deep_copy = copy.deepcopy(deep_list)

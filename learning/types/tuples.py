@@ -2,6 +2,8 @@
 import string
 
 def tuples():
+    empty_tup = ()
+
     # Immutable
     tup = ('foo', 100, 42)
 
@@ -12,8 +14,6 @@ def tuples():
     doc_count = tup[2]
 
     w, w_count, d_count = tup
-
-    empty_tup = ()
 
     # create tuples from two lists via zip
     lower_upper_tuples = zip(string.ascii_lowercase, string.ascii_uppercase)

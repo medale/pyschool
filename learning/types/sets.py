@@ -1,5 +1,7 @@
 # https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 def sets():
+    # the empty set (remember {} is empty dict!)
+    empty = set()
 
     set1 = {'a', 'b', 'c'}
 
@@ -40,6 +42,3 @@ def sets():
     # compare two sets: isdisjoint, issubset, issuperset also <=, <, >=, >
     # False - they have 'c' in common
     disjoint = set1.isdisjoint(set2)
-
-    # the empty set (remember {} is empty dict!)
-    empty = set()
