@@ -1,3 +1,7 @@
+# Note:
+Create a file 'you_try_types.py' under .../pyschool and
+run your solutions in the Python console.
+
 # Numbers
 * What's 2 to the 10th?
 * What is the square root of 15?
@@ -64,9 +68,35 @@
 * Retrieve the second value in the tuple
 * Check if 42 is in the tuple
 * Unpack the tuple as name, age
+* Can you change the value of a tuple by assignment?
 
+# Booleans/None
+* What are the literals for true/false boolean values?
+* In the following code, what gets printed and why?
+```python
+i = 0
+# or do we get: TypeError: 'int' object is not subscriptable
+if i == 0 or i[0]:
+   print("Short-circuited the subscript on int")
+   
+if i:
+   print("if test was true")
+else:
+   print("if test was false")
+```
+* Write a function that prints 'Hello, World!' and returns None
 
+# Files
+* Open 'README.md' for reading and determine how many lines it has (see hint below)
+```python
+# determining current working directory
+import os
 
+# assignment assumes you are in .../pyschool
+# and there is a README.md file
+cwd = os.getcwd()
+```
+* Copy the file 'README.md' to '/tmp/README.md'
 
 
 

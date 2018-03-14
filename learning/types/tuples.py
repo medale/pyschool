@@ -15,7 +15,7 @@ def tuples():
 
     w, w_count, d_count = tup
 
-    # create tuples from two lists via zip
+    # create tuples from two lists via zip - zip object with __next()__ method
     lower_upper_tuples = zip(string.ascii_lowercase, string.ascii_uppercase)
 
     # use two tuples to create a dict
