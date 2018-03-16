@@ -26,3 +26,14 @@
     for k,v in countries_to_capitols.items():
         capitols_to_countries[v] = k
 ```
+
+# while loop - statements/whiles.py
+```python
+while test:    
+   statements    
+   if test: break                 # Exit loop now, skip else if present    
+   if test: continue              # Go to test at top of loop now
+else:    
+   statements                     # Run if we didn't hit a 'break'                                  
+```
+Source(Mark Lutz, Learning Python 5th edition, O'Reilly, 2013)
