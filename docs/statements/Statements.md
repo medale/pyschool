@@ -37,3 +37,7 @@ else:
    statements                     # Run if we didn't hit a 'break'                                  
 ```
 Source(Mark Lutz, Learning Python 5th edition, O'Reilly, 2013)
+
+# Iterations/Comprehensions
+* for iteration over sequences (e.g. list, sets)
+* but also iterables: have `__next__` method and raise StopIteration error at end
