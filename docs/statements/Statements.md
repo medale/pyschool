@@ -38,7 +38,7 @@ else:
 ```
 Source(Mark Lutz, Learning Python 5th edition, O'Reilly, 2013)
 
-# Iterations
+# Iterations - statements/iterations.py
 * for iteration over sequences (e.g. list, sets)
 * but also iterables: have `__next__` method and raise StopIteration error at end
 
@@ -50,7 +50,7 @@ for line in open('three_lines.txt'):
     print(line, end='')
 ```
 
-# List comprehension
+# List comprehension - statements/iterations.py
 ```python
 # Most general syntax
 new_list = [str(elem) for elem in old_list if test]
@@ -63,7 +63,7 @@ l = range(100)
 new_l = [num for num in l if num % 2 == 0]
 ```
 
-# Set and dictionary comprehensions
+# Set and dictionary comprehensions - statements/iterations.py
 ```python
 letters = ['A', 'c', 'C', 'D', 'D', 'e']
 unique_uppers = {letter for letter 
@@ -78,7 +78,7 @@ ascii_vals = [ord(letter) for letter in lowers]
 ascii_dict = {letter: ascii for letter,ascii in zip(lowers, ascii_vals)}
 ```
 
-# Functions on iterables
+# Functions on iterables - statements/iterations.py
 * list, set, dict
 * enumerate - creates two-tuple with first element (0, first_iter),
 * zip

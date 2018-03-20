@@ -1,4 +1,5 @@
 import os
+import random
 import string
 
 def iterations():
@@ -87,6 +88,24 @@ def functions_on_iterables():
     joined = ','.join(dupes)
 
     # sum, any, all, max, min
+    sum(range(101)) #(n * (n+1)/2)
+
+    results = [True, False, True]
+    any_trues = any(results)
+    all_trues = all(results)
+
+    random_nums = [random.randint(0,100) for x in range(101)]
+    high = max(random_nums)
+    low = min(random_nums)
+
+    low_random_nums = list(filter(my_filter, random_nums))
+
+    # or lambda function
+    low_random_nums_lambda = list(filter(lambda n: n < 50, random_nums))
+
+
+def my_filter(n):
+    return n < 50
 
 
 if __name__== "__main__":
