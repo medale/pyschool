@@ -72,7 +72,7 @@ def comprehensions():
 
 def functions_on_iterables():
     # list, set, dict (iterable over two-tuples), enumerate
-    dupes = 'aabbccdd'
+    dupes = 'cabdabcd'
     ldupes = list(dupes)
     sdupes = set(dupes)
     ddupes = dict(enumerate(dupes))
@@ -83,7 +83,19 @@ def functions_on_iterables():
     # apply method upper of str objects for each letter in dupes
     uppers = list(map(str.upper, dupes))
 
-    order = sorted(sdupes)
+    # creates a new sorted list - ldupes is unchanged
+    order = sorted(ldupes)
+
+    rev_order = sorted(ldupes, reverse=True)
+
+    tuples = [('joe', 42), ('jane', 23), ('alice', 50), ('alice', 29)]
+
+    natural_sort = sorted(tuples)
+
+    by_age = sorted(tuples, key=lambda t: t[1])
+
+    # sorts dupes (mutates the original list)
+    ldupes.sort()
 
     joined = ','.join(dupes)
 

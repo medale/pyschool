@@ -70,6 +70,9 @@ They can't spel either."""
 
     correct_s3 = s3.replace("spel","spell")
 
+    # determine if a string contains a substring
+    'foo' in 'bar foo baz'
+
     # find index of first can't or -1
     cant_index = s3.find("can't")
 
