@@ -6,7 +6,7 @@ def ifs():
     # first condition evaluating to true gets executed
     if count > 10:
         print('big')
-    elif count < 10 and count > 5:
+    elif 5 < count < 10:
         print('medium')
     else:
         print('small')

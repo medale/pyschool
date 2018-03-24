@@ -21,5 +21,10 @@
      * `response = requests.get("http://docs.python.org")`
 * User-defined - def, lambda
 
-
+# Named functions
+```python
+def function_name(arg1, arg2):
+   statements
+   return result
+```
      
