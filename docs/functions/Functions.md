@@ -21,10 +21,26 @@
      * `response = requests.get("http://docs.python.org")`
 * User-defined - def, lambda
 
-# Named functions
+# Named functions - learning/functions/defs.py
+* a def function definition is an object with a name
+* function is not executed until called at runtime
+
 ```python
 def function_name(arg1, arg2):
    statements
    return result
+   
+
+def foobar(arg1):
+   if arg1 > 100:
+      return 'foo'
+   else:
+      return 'bar'
 ```
+
+# Functions are first-class objects - learning/functions/first_class_objects.py
+* def 'name' assigns 'name' as a reference to the function object
+* Can assign new reference name
+* Can pass functions to other functions as arguments
+* Can return a function from a function
      
