@@ -41,6 +41,10 @@ def foobar(arg1):
 # Functions are first-class objects - learning/functions/first_class_objects.py
 * def 'name' assigns 'name' as a reference to the function object
 * Can assign new reference name
-* Can pass functions to other functions as arguments
-* Can return a function from a function
+* Can pass functions to other functions as arguments (closure)
+* Can return a function (closure) from a function
+
+
+# Recursive functions
+* A function that calls itself with some ending condition
      

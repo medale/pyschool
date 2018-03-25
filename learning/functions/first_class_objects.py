@@ -12,6 +12,7 @@ from nltk.corpus import stopwords
 #
 # Such goodies as: http://www.nltk.org/howto/twitter.html
 
+
 def install_nltk_corpus():
     import nltk
     nltk.download()
@@ -31,11 +32,13 @@ def remove_stopwords(lower_case_words):
 def lower(words):
     return [w.lower() for w in words]
 
+
 def remove_non_words(all_content):
     print('Input size: %d' % len(all_content))
     words = [w for w in all_content if w.isalpha()]
     print('Output size: %d' % len(words))
     return words
+
 
 def count_frequency(words):
     freq_dict = {}
@@ -85,5 +88,5 @@ def main():
     print_results(top_pipe)
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
