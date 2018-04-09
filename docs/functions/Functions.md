@@ -47,4 +47,20 @@ def foobar(arg1):
 
 # Recursive functions
 * A function that calls itself with some ending condition
+
+
+# lambda - Anonymous Functions - learning/functions/lambdas.py
+* lambda is an expression (def is a statement)
+* can be used inside of a function call
+
+```python
+
+words = ['this', 'is', 'a', 'test', 'of', 'the']
+lengths = map(lambda w: len(w), words)
+
+nums = [('apple', 1), ('tea', 4), ('beer', 2)]
+most_frequents = 
+   sorted(nums,key=lambda t: t[1],reverse=True)
+
+```
      

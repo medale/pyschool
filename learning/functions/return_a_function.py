@@ -3,24 +3,51 @@ import os.path as path
 
 
 def filter_by_extension(ext):
+    """
+    A higher-order function that returns a function
+    that given a filename filters by the extension
+    argument.
+    :param ext: the return function will return true if a filename ends with ext
+    :return: a one-arg function that takes a filename and returns true if filename ends with ext
+    """
     def filt(filename):
         return filename.endswith(ext)
     return filt
 
 
 def filter_not_by_starting_symbol(symbols):
+    """
+    A higher-order function that returns a function that filters
+    filenames to filenames NOT starting with symbols
+    :param symbols:
+    :return:
+    """
     def filt(filename):
         return not any([filename.startswith(s) for s in symbols])
     return filt
 
 
 def filter_by_contains(fragment):
+    """
+    A higher-order function that returns a function that checks whether
+    a filename contains fragment.
+    :param fragment:
+    :return:
+    """
     def filt(filename):
         return fragment in filename
     return filt
 
 
 def list(directory=os.getcwd(), filter_funcs=[]):
+    """
+    List files in directory and return files that test true for all
+    filter_funcs.
+
+    :param directory:
+    :param filter_funcs:
+    :return:
+    """
     # arguments with default values
     files_and_dirs = os.listdir(directory)
     files = [f for f in files_and_dirs if path.isfile(path.join(directory, f))]
